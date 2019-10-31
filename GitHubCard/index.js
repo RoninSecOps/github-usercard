@@ -46,17 +46,6 @@ const followersArray = [
   'redelmann',
   'theesweeney',
 ];
-const url = 'https://api.github.com/users/';
-followersArray.forEach(user => {
-  axios
-    .get(`${url}${user}`)
-    .then(response => {
-      cardsPoint.appendChild(cardMaker(response.data));
-    })
-    .catch(error => {
-      console.log(error);
-    });
-});
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
@@ -77,6 +66,16 @@ followersArray.forEach(user => {
 </div>
 
 */
+
+// cardsPoint.appendChild(cardMaker(followersArray));
+
+/* List of LS Instructors Github username's: 
+  tetondan
+  dustinmyers
+  justsml
+  luishrd
+  bigknell
+*/
 function cardMaker(data) {
   // create all elements
   const newCard = document.createElement('div');
@@ -90,50 +89,4 @@ function cardMaker(data) {
   const followers = document.createElement('p');
   const following = document.createElement('p');
   const bio = document.createElement('p');
-  //create structure
-  newCard.appendChild(usrImg);
-  newCard.appendChild(cardInfo);
-  cardInfo.appendChild(name);
-  cardInfo.appendChild(userName);
-  cardInfo.appendChild(location);
-  cardInfo.appendChild(profile);
-  profile.appendChild(userPage);
-  cardInfo.appendChild(followers);
-  cardInfo.appendChild(following);
-  cardInfo.appendChild(bio);
-  // set the content
-  usrImg.src = data.avatar_url;
-  name.textContent = data.name;
-  userName.textContent = data.login;
-  location.textContent = `Location: ${data.location}`;
-  profile.textContent = 'Profile: ';
-  userPage.textContent = data.html_url;
-  userPage.href = data.html_url;
-  followers.textContent = `Followers: ${data.followers}`;
-  following.textContent = `Following: ${data.following}`;
-  bio.textContent = `Bio: ${data.bio}`;
-  // apply style
-  newCard.classList.add('card');
-  usrImg.classList.add('img');
-  name.classList.add('name');
-  userName.classList.add('p', 'username');
-  location.classList.add('p');
-  profile.classList.add('p');
-  userPage.classList.add('p');
-  followers.classList.add('p');
-  following.classList.add('p');
-  bio.classList.add('p');
-
-  //return card
-  return newCard;
 }
-const cardsPoint = document.querySelector('.cards');
-// cardsPoint.appendChild(cardMaker(followersArray));
-
-/* List of LS Instructors Github username's: 
-  tetondan
-  dustinmyers
-  justsml
-  luishrd
-  bigknell
-*/
