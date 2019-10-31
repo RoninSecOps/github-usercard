@@ -126,3 +126,15 @@ function cardMaker(data) {
   //return card
   return newCard;
 }
+const cardsPoint = document.querySelector('.cards');
+const url = 'https://api.github.com/users/';
+followersArray.forEach(user => {
+  axios
+    .get(`${url}${user}`)
+    .then(response => {
+      cardsPoint.appendChild(cardMaker(response.data));
+    })
+    .catch(error => {
+      console.log(error);
+    });
+});
