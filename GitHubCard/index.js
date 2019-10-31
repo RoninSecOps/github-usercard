@@ -115,13 +115,13 @@ function cardMaker(data) {
   newCard.classList.add('card');
   usrImg.classList.add('img');
   name.classList.add('name');
-  userName.classList.add('p', 'username');
-  location.classList.add('p');
-  profile.classList.add('p');
-  userPage.classList.add('p');
-  followers.classList.add('p');
-  following.classList.add('p');
-  bio.classList.add('p');
+  // userName.classList.add('p', 'username');
+  // location.classList.add('p');
+  // profile.classList.add('p');
+  // userPage.classList.add('p');
+  // followers.classList.add('p');
+  // following.classList.add('p');
+  // bio.classList.add('p');
 
   //return card
   return newCard;
