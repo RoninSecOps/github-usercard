@@ -100,4 +100,15 @@ function cardMaker(data) {
   cardInfo.appendChild(followers);
   cardInfo.appendChild(following);
   cardInfo.appendChild(bio);
+  // set the content
+  usrImg.src = data.avatar_url;
+  name.textContent = data.name;
+  userName.textContent = data.login;
+  location.textContent = `Location: ${data.location}`;
+  profile.textContent = 'Profile: ';
+  userPage.textContent = data.html_url;
+  userPage.href = data.html_url;
+  followers.textContent = `Followers: ${data.followers}`;
+  following.textContent = `Following: ${data.following}`;
+  bio.textContent = `Bio: ${data.bio}`;
 }
